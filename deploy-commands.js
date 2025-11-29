@@ -25,7 +25,8 @@ const commands = [
 
 const rest = new REST({ version: "10" }).setToken(TOKEN);
 
-(async () => {
+// Exportamos a função para ser chamada no index.js
+module.exports = async () => {
     try {
         console.log("⏳ Registrando comandos...");
         await rest.put(
@@ -34,6 +35,6 @@ const rest = new REST({ version: "10" }).setToken(TOKEN);
         );
         console.log("✅ Comandos registrados com sucesso!");
     } catch (error) {
-        console.error("Erro ao registrar comandos:", error);
+        console.error("❌ Erro ao registrar comandos:", error);
     }
-})();
+};
