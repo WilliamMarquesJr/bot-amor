@@ -1,6 +1,9 @@
 const { Client, GatewayIntentBits } = require("discord.js");
 const cron = require("node-cron");
 
+// Importar o script que registra os comandos
+const registerCommands = require("./deploy-commands.js");
+
 const TOKEN = process.env.TOKEN;
 const CHANNEL_ID = process.env.CHANNEL_ID;
 
@@ -12,7 +15,10 @@ const client = new Client({
     ]
 });
 
-client.once("clientReady", () => {
+// Registrar comandos automaticamente ao iniciar
+registerCommands();
+
+client.once("ready", () => {
     console.log(`Bot conectado como ${client.user.tag}`);
 
     // Enviar às 12:00
@@ -67,4 +73,5 @@ client.on("interactionCreate", async interaction => {
     }
 });
 
+// Login
 client.login(TOKEN);
