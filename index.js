@@ -12,7 +12,7 @@ const client = new Client({
     ]
 });
 
-client.once("ready", () => {
+client.once("clientReady", () => {
     console.log(`Bot conectado como ${client.user.tag}`);
 
     // Enviar às 12:00
@@ -46,12 +46,24 @@ client.once("ready", () => {
     });
 });
 
-// ====== Comando: /amor ======
+// ====== Comandos Slash ======
 client.on("interactionCreate", async interaction => {
     if (!interaction.isChatInputCommand()) return;
 
-    if (interaction.commandName === "amor") {
+    if (interaction.commandName === "bubis") {
         await interaction.reply("Minha princesa linda, eu te amo ❤️");
+    }
+
+    if (interaction.commandName === "gatos") {
+        await interaction.reply("Bubis tem 5 gatos: Neo, Nami, Niquinho e Nilson");
+    }
+
+    if (interaction.commandName === "cammy") {
+        await interaction.reply("sou a Cammy dele");
+    }
+
+    if (interaction.commandName === "bubinho") {
+        await interaction.reply("minha garota obediente fofinha");
     }
 });
 
