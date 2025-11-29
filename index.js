@@ -15,14 +15,24 @@ const client = new Client({
 client.once("ready", () => {
     console.log(`Bot conectado como ${client.user.tag}`);
 
-    cron.schedule("0 12 * * *", () => {
-        const channel = client.channels.cache.get(CHANNEL_ID);
-        if (channel) channel.send("Eu te amo ❤️");
+    // Enviar às 12:00
+    cron.schedule("0 12 * * *", async () => {
+        try {
+            const channel = await client.channels.fetch(CHANNEL_ID);
+            if (channel) channel.send("Eu te amo ❤️");
+        } catch (error) {
+            console.error("Erro ao enviar mensagem das 12h:", error);
+        }
     });
 
-    cron.schedule("40 15 * * *", () => {
-        const channel = client.channels.cache.get(CHANNEL_ID);
-        if (channel) channel.send("Eu te amo ❤️");
+    // Enviar às 15:40
+    cron.schedule("40 15 * * *", async () => {
+        try {
+            const channel = await client.channels.fetch(CHANNEL_ID);
+            if (channel) channel.send("Eu te amo ❤️");
+        } catch (error) {
+            console.error("Erro ao enviar mensagem das 15:40:", error);
+        }
     });
 });
 
