@@ -1,0 +1,13 @@
+{
+  "name": "bot-amor",
+  "version": "1.0.0",
+  "description": "Bot do Discord que envia mensagens automáticas de amor.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.15.3",
+    "node-cron": "^3.0.3"
+  }
+}
