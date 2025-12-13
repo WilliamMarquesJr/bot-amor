@@ -1,7 +1,6 @@
 const { Client, GatewayIntentBits } = require("discord.js");
 const cron = require("node-cron");
 
-// Importar o script que registra os comandos
 const registerCommands = require("./deploy-commands.js");
 
 const TOKEN = process.env.TOKEN;
@@ -15,23 +14,20 @@ const client = new Client({
     ]
 });
 
-// Registrar comandos automaticamente ao iniciar
 registerCommands();
 
 client.once("ready", () => {
     console.log(`Bot conectado como ${client.user.tag}`);
 
-    // Enviar às 12:00
     cron.schedule("0 12 * * *", async () => {
         try {
             const channel = await client.channels.fetch(CHANNEL_ID);
-            if (channel) channel.send("Neném eu te amo, você é a minha fofinha cuti cuti.");
+            if (channel) channel.send("Neném eu te amo, você é a minha fofinha do pezinho e da mãozinha cuti cuti.");
         } catch (error) {
             console.error("Erro ao enviar mensagem das 12h:", error);
         }
     });
 
-    // Enviar às 15:40
     cron.schedule("40 15 * * *", async () => {
         try {
             const channel = await client.channels.fetch(CHANNEL_ID);
@@ -41,18 +37,16 @@ client.once("ready", () => {
         }
     });
 
-    // Enviar às 19:00
     cron.schedule("0 19 * * *", async () => {
         try {
             const channel = await client.channels.fetch(CHANNEL_ID);
-            if (channel) channel.send("Bunda gostosa da minha vida, eu te amo.");
+            if (channel) channel.send("Bunda grande gostosa da minha vida, eu te amo.");
         } catch (error) {
             console.error("Erro ao enviar mensagem das 19h:", error);
         }
     });
 });
 
-// ====== Comandos Slash ======
 client.on("interactionCreate", async interaction => {
     if (!interaction.isChatInputCommand()) return;
 
@@ -73,5 +67,4 @@ client.on("interactionCreate", async interaction => {
     }
 });
 
-// Login
 client.login(TOKEN);
