@@ -1,6 +1,3 @@
 # Bot do Amor ❤️
-
-Bot simples do Discord que envia automaticamente a mensagem  
-"Eu te amo ❤️" todos os dias às 12:00 e 15:40.
-
-Feito para rodar 24/7 no Render.
+  Um bot simples criado com o objetivo de mandar mensagens carinhosas e amorosas para a minha esposa no nosso servidor privado.
+  O bot envia várias mensagens ao dia todos os dias 24/7 no [Railwai](https://railway.com).
