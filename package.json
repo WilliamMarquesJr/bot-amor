@@ -1,7 +1,7 @@
 {
   "name": "bot-amor",
-  "version": "1.0.0",
-  "description": "Bot do Discord que envia mensagens automáticas de amor.",
+  "version": "1.0.1",
+  "description": "Bot do Discord que envia mensagens automáticas de amor para a minha esposa.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
